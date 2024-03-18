@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:rsponsive_dashbaord/models/drawer_item_model.dart';
 import 'package:rsponsive_dashbaord/utlis/app_images.dart';
 import 'package:rsponsive_dashbaord/widgets/active_and_inactive_drawer_item.dart';
@@ -33,7 +32,9 @@ class CustomDrawer extends StatelessWidget {
             child: Column(
               children: [
                 Expanded(
-                  child: SizedBox(),
+                  child: SizedBox(
+                    height: 20,
+                  ),
                 ),
               ],
             ),
