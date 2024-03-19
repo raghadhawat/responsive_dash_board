@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:rsponsive_dashbaord/widgets/all_expensess.dart';
+import 'package:rsponsive_dashbaord/widgets/all_expensess_and_quick_invoice_section.dart';
 import 'package:rsponsive_dashbaord/widgets/custom_drawer.dart';
-import 'package:rsponsive_dashbaord/widgets/quick_invoice.dart';
+import 'package:rsponsive_dashbaord/widgets/my_card.dart';
 
 class DashboardDesktopLayout extends StatelessWidget {
   const DashboardDesktopLayout({super.key});
@@ -20,19 +20,9 @@ class DashboardDesktopLayout extends StatelessWidget {
         ),
         Expanded(
           flex: 2,
-          child: Column(
-            children: [
-              SizedBox(
-                height: 40,
-              ),
-              AllExpensess(),
-              SizedBox(
-                height: 24,
-              ),
-              QuickInvoice()
-            ],
-          ),
+          child: AllExpensessAndQuickInvoiceSection(),
         ),
+        Expanded(child: MyCard())
       ],
     );
   }
