@@ -11,7 +11,7 @@ class MyCardsPageview extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       children: List.generate(
         3,
-        (index) => MyCard(),
+        (index) => const MyCard(),
       ),
     );
   }
