@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:rsponsive_dashbaord/widgets/my_card.dart';
 
 class MyCardsPageview extends StatelessWidget {
-  const MyCardsPageview({super.key});
-
+  const MyCardsPageview({super.key, required this.pageController});
+  final PageController pageController;
   @override
   Widget build(BuildContext context) {
     return ExpandablePageView(
+      controller: pageController,
       scrollDirection: Axis.horizontal,
       children: List.generate(
         3,
