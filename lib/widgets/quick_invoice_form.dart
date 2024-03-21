@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:rsponsive_dashbaord/utlis/custom_button.dart';
 import 'package:rsponsive_dashbaord/widgets/title_text_field.dart';
 
@@ -66,7 +64,10 @@ class QuickInvoiceForm extends StatelessWidget {
             SizedBox(
               width: 24,
             ),
-            Expanded(child: CustomButton()),
+            Expanded(
+                child: CustomButton(
+              textColor: Colors.white,
+            )),
           ],
         ),
       ],
