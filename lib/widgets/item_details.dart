@@ -11,9 +11,13 @@ class Itemdetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(
-        itemDetailsModel.title,
-        style: AppStyles.styleRegular16(context),
+      title: FittedBox(
+        fit: BoxFit.scaleDown,
+        alignment: AlignmentDirectional.centerStart,
+        child: Text(
+          itemDetailsModel.title,
+          style: AppStyles.styleRegular16(context),
+        ),
       ),
       trailing: Text(
         itemDetailsModel.value,
