@@ -36,45 +36,28 @@ class _AllExpensessItemsListViewState extends State<AllExpensessItemsListView> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      // children: items
-      //     .map((e) =>
-      //         Expanded(child: AllExpensessItem(allExpensessItemModel: e)))
-      //     .toList(),
-      children: items.asMap().entries.map(
-        (e) {
-          int index = e.key;
-          var item = e.value;
-          if (index == 1) {
-            return Expanded(
-              child: GestureDetector(
-                onTap: () {
-                  updateIndex(index);
-                },
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12),
-                  child: AllExpensessItem(
-                    allExpensessItemModel: item,
-                    isSelected: selectedIndex == index,
-                  ),
-                ),
-              ),
-            );
-          } else {
-            return Expanded(
-              child: GestureDetector(
-                onTap: () {
-                  updateIndex(index);
-                },
-                child: AllExpensessItem(
-                  allExpensessItemModel: item,
-                  isSelected: selectedIndex == index,
-                ),
-              ),
-            );
-          }
-        },
-      ).toList(),
-    );
+        // children: items
+        //     .map((e) =>
+        //         Expanded(child: AllExpensessItem(allExpensessItemModel: e)))
+        //     .toList(),
+        children: items.asMap().entries.map((e) {
+      int index = e.key;
+      var item = e.value;
+      return Expanded(
+        child: GestureDetector(
+          onTap: () {
+            updateIndex(index);
+          },
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: index == 1 ? 12 : 0),
+            child: AllExpensessItem(
+              allExpensessItemModel: item,
+              isSelected: selectedIndex == index,
+            ),
+          ),
+        ),
+      );
+    }).toList());
   }
 
   void updateIndex(int index) {
